@@ -2,12 +2,17 @@ from django.conf import settings
 from django.core.exceptions import ValidationError
 from django.db import models
 
-from airport.services.airplane_image import airplane_image_file_path
+from airport.services.utils.airplane_image import airplane_image_file_path
 from airport.choices import (
     AirplaneName,
     AirplaneTypeName,
     CrewRole
 )
+from airport.services.utils.distance_calcultion import (
+    get_coord,
+    calculate_distance
+)
+from airport.services.utils.city_verification import get_city
 
 
 class Flight(models.Model):
@@ -70,6 +75,9 @@ class Crew(models.Model):
         choices=CrewRole.choices,
     )
 
+    class Meta:
+        ordering = ("role",)
+
     @property
     def full_name(self) -> str:
         return f"{self.first_name} {self.last_name}"
@@ -102,6 +110,14 @@ class Route(models.Model):
                 "Departure and arrival points cannot be the same."
             )
 
+        try:
+            self.distance = calculate_distance(
+                source_coords=get_coord(self.source.closest_big_city),
+                destination_coords=get_coord(self.destination.closest_big_city)
+            )
+        except ValidationError as e:
+            raise ValidationError(f"Error calculating distance: {e}")
+
     def save(
         self,
         force_insert=False,
@@ -126,6 +142,25 @@ class Airport(models.Model):
     class Meta:
         ordering = ("name",)
         unique_together = ("name", "closest_big_city")
+
+    def clean(self):
+        is_existing_city = get_city(self.closest_big_city)
+
+        if not is_existing_city:
+            raise ValidationError("The entered city does not exist.")
+
+    def save(
+        self,
+        force_insert=False,
+        force_update=False,
+        using=None,
+        update_fields=None,
+        **kwargs
+    ):
+        self.full_clean()
+        return super(Airport, self).save(
+            force_insert, force_update, using, update_fields, **kwargs
+        )
 
 
 class Airplane(models.Model):

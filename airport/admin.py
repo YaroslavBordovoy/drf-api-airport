@@ -38,6 +38,7 @@ class AirportAdmin(admin.ModelAdmin):
 @admin.register(Route)
 class RouteAdmin(admin.ModelAdmin):
     list_display = ("source", "destination", "distance")
+    readonly_fields = ("distance",)
     search_fields = ("source",)
     list_filter = ("source",)
     list_per_page = 10
