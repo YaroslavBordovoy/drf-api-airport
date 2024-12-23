@@ -1,9 +1,13 @@
 from django.conf import settings
 from django.core.exceptions import ValidationError
 from django.db import models
-from django.utils.translation import gettext_lazy as _
 
 from airport.services.airplane_image import airplane_image_file_path
+from airport.choices import (
+    AirplaneName,
+    AirplaneTypeName,
+    CrewRole
+)
 
 
 class Flight(models.Model):
@@ -23,6 +27,9 @@ class Flight(models.Model):
 
     class Meta:
         ordering = ("route", "departure_time")
+
+    def __str__(self) -> str:
+        return str(self.route)
 
     @staticmethod
     def validate_time(
@@ -56,21 +63,19 @@ class Flight(models.Model):
 
 
 class Crew(models.Model):
-    class CrewRole(models.TextChoices):
-        PILOT = "P", _("Pilot")
-        CO_PILOT = "CP", _("Co-Pilot")
-        FLIGHT_ATTENDANT = "FA", _("Flight Attendant")
-
     first_name = models.CharField(max_length=63)
     last_name = models.CharField(max_length=63)
     role = models.CharField(
-        max_length=2,
+        max_length=3,
         choices=CrewRole.choices,
     )
 
     @property
     def full_name(self) -> str:
         return f"{self.first_name} {self.last_name}"
+
+    def __str__(self):
+        return f"{self.full_name} ({self.role})"
 
 
 class Route(models.Model):
@@ -119,15 +124,14 @@ class Airport(models.Model):
         return f"{self.name} ({self.closest_big_city})"
 
     class Meta:
+        ordering = ("name",)
         unique_together = ("name", "closest_big_city")
 
 
 class Airplane(models.Model):
     name = models.CharField(
-        help_text="Enter aircraft model [company-model-identifier], "
-                  "for example: Boeing-737-01.",
-        max_length=63,
-        unique=True
+        max_length=7,
+        choices=AirplaneName.choices
     )
     rows = models.PositiveIntegerField()
     seats_in_row = models.PositiveIntegerField()
@@ -142,6 +146,12 @@ class Airplane(models.Model):
         upload_to=airplane_image_file_path,
         default="defaults/default_airplane.jpg",
     )
+
+    class Meta:
+        ordering = ("name",)
+
+    def __str__(self) -> str:
+        return self.get_name_display()
 
     @property
     def capacity(self) -> int:
@@ -164,7 +174,7 @@ class Airplane(models.Model):
         **kwargs
     ):
         airplane_type_name = self.type_of_plane()
-        self.airplane_type = AirplaneType.objects.get_or_create(
+        self.airplane_type, _ = AirplaneType.objects.get_or_create(
             name=airplane_type_name
         )
         super(Airplane, self).save(
@@ -173,18 +183,13 @@ class Airplane(models.Model):
 
 
 class AirplaneType(models.Model):
-    class AirplaneName(models.TextChoices):
-        SMALL = "SM", _("Small plane")
-        MEDIUM = "MD", _("Medium plane")
-        LARGE = "LR", _("Large plane")
-
     name = models.CharField(
-        max_length=2,
-        choices=AirplaneName.choices
+        max_length=3,
+        choices=AirplaneTypeName.choices
     )
 
     def __str__(self) -> str:
-        return self.name
+        return f"{self.get_name_display()} ({self.name})"
 
 
 class Ticket(models.Model):
@@ -248,7 +253,13 @@ class Ticket(models.Model):
 class Order(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     user = models.ForeignKey(
-        to=settings.AUTH_USER_MODEl,
+        to=settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
         related_name="orders"
     )
+
+    def __str__(self) -> str:
+        return (
+            f"{self.user} "
+            f"(create at: {self.created_at.strftime('%d-%m-%Y %H:%M')})"
+        )
