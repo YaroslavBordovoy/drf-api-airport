@@ -9,3 +9,4 @@ exclude =
     venv
     tests
     core/settings.py
+    airport/management
