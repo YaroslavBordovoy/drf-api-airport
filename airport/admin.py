@@ -10,6 +10,7 @@ from airport.models import (
     Ticket,
     Order
 )
+from airport.filters import DistanceRangeFilterAdmin
 
 
 @admin.register(Airplane)
@@ -31,7 +32,6 @@ class AirplaneAdmin(admin.ModelAdmin):
 class AirportAdmin(admin.ModelAdmin):
     list_display = ("name", "closest_big_city")
     search_fields = ("name",)
-    list_filter = ("closest_big_city",)
     list_per_page = 10
 
 
@@ -39,8 +39,8 @@ class AirportAdmin(admin.ModelAdmin):
 class RouteAdmin(admin.ModelAdmin):
     list_display = ("source", "destination", "distance")
     readonly_fields = ("distance",)
-    search_fields = ("source",)
-    list_filter = ("source",)
+    search_fields = ("source__closest_big_city",)
+    list_filter = (DistanceRangeFilterAdmin,)
     list_per_page = 10
 
 
@@ -64,15 +64,13 @@ class OrderAdmin(admin.ModelAdmin):
 class TicketAdmin(admin.ModelAdmin):
     list_display = ("order", "flight", "row", "seat")
     search_fields = ("order__user__username",)
-    list_filter = ("flight",)
     list_per_page = 10
 
 
 @admin.register(Flight)
 class FlightAdmin(admin.ModelAdmin):
     list_display = ("route", "airplane", "departure_time", "arrival_time")
-    search_fields = ("route",)
-    list_filter = ("route",)
+    search_fields = ("route__source__closest_big_city",)
     list_per_page = 10
 
 
