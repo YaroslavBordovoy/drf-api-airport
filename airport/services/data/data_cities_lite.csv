@@ -1,0 +1,201 @@
+city,city_ascii,lat,lng,country,iso2,iso3,admin_name,capital,population,id
+São Paulo,Sao Paulo,-23.5500,-46.6333,Brazil,BR,BRA,São Paulo,admin,23086000.0,1076532519
+Mexico City,Mexico City,19.4333,-99.1333,Mexico,MX,MEX,Ciudad de México,primary,21804000.0,1484247881
+New York,New York,40.6943,-73.9249,United States,US,USA,New York,,18908608.0,1840034016
+Moscow,Moscow,55.7558,37.6172,Russia,RU,RUS,Moskva,primary,17332000.0,1643318494
+Buenos Aires,Buenos Aires,-34.6033,-58.3817,Argentina,AR,ARG,"Buenos Aires, Ciudad Autónoma de",primary,16710000.0,1032717330
+Rio de Janeiro,Rio de Janeiro,-22.9111,-43.2056,Brazil,BR,BRA,Rio de Janeiro,admin,12592000.0,1076887657
+Los Angeles,Los Angeles,34.1141,-118.4068,United States,US,USA,California,,11922389.0,1840020491
+London,London,51.5072,-0.1275,United Kingdom,GB,GBR,"London, City of",primary,11262000.0,1826645935
+Paris,Paris,48.8567,2.3522,France,FR,FRA,Île-de-France,primary,11060000.0,1250015082
+Lima,Lima,-12.0600,-77.0375,Peru,PE,PER,Lima,primary,10320000.0,1604728603
+Chicago,Chicago,41.8375,-87.6866,United States,US,USA,Illinois,,8497759.0,1840000494
+Bogotá,Bogota,4.7111,-74.0722,Colombia,CO,COL,Bogotá,primary,7968095.0,1170483426
+Santiago,Santiago,-33.4372,-70.6506,Chile,CL,CHL,Región Metropolitana,primary,7171000.0,1152554349
+Madrid,Madrid,40.4169,-3.7033,Spain,ES,ESP,Madrid,primary,6211000.0,1724616994
+Miami,Miami,25.7840,-80.2101,United States,US,USA,Florida,,6080145.0,1840015149
+Houston,Houston,29.7860,-95.3885,United States,US,USA,Texas,,5970127.0,1840020925
+Dallas,Dallas,32.7935,-96.7667,United States,US,USA,Texas,,5830932.0,1840019440
+Philadelphia,Philadelphia,40.0077,-75.1339,United States,US,USA,Pennsylvania,,5683533.0,1840000673
+Toronto,Toronto,43.7417,-79.3733,Canada,CA,CAN,Ontario,admin,5647656.0,1124279679
+Guadalajara,Guadalajara,20.6767,-103.3475,Mexico,MX,MEX,Jalisco,admin,5525000.0,1484950208
+Saint Petersburg,Saint Petersburg,59.9375,30.3086,Russia,RU,RUS,Sankt-Peterburg,admin,5384342.0,1643616350
+Monterrey,Monterrey,25.6667,-100.3000,Mexico,MX,MEX,Nuevo León,admin,5341171.0,1484559591
+Belo Horizonte,Belo Horizonte,-19.9167,-43.9333,Brazil,BR,BRA,Minas Gerais,admin,5328000.0,1076967355
+Atlanta,Atlanta,33.7628,-84.4220,United States,US,USA,Georgia,admin,5180179.0,1840013660
+Washington,Washington,38.9047,-77.0163,United States,US,USA,District of Columbia,primary,5116378.0,1840006060
+Berlin,Berlin,52.5200,13.4050,Germany,DE,DEU,Berlin,primary,4890363.0,1276451290
+Barcelona,Barcelona,41.3828,2.1769,Spain,ES,ESP,Catalonia,admin,4800000.0,1724594040
+Boston,Boston,42.3188,-71.0852,United States,US,USA,Massachusetts,admin,4328315.0,1840000455
+Fortaleza,Fortaleza,-3.7275,-38.5275,Brazil,BR,BRA,Ceará,admin,4167996.0,1076567885
+Phoenix,Phoenix,33.5722,-112.0892,United States,US,USA,Arizona,admin,4064275.0,1840020568
+Detroit,Detroit,42.3834,-83.1024,United States,US,USA,Michigan,,3725908.0,1840003971
+Montréal,Montreal,45.5089,-73.5617,Canada,CA,CAN,Quebec,,3675219.0,1124586170
+Seattle,Seattle,47.6211,-122.3244,United States,US,USA,Washington,,3561397.0,1840021117
+San Francisco,San Francisco,37.7558,-122.4449,United States,US,USA,California,,3364979.0,1840021543
+Athens,Athens,37.9842,23.7281,Greece,GR,GRC,Attikí,primary,3059764.0,1300715560
+San Diego,San Diego,32.8313,-117.1222,United States,US,USA,California,,3046560.0,1840021990
+Budapest,Budapest,47.4925,19.0514,Hungary,HU,HUN,Budapest,primary,2997958.0,1348611435
+Kyiv,Kyiv,50.4500,30.5233,Ukraine,UA,UKR,"Kyiv, Misto",primary,2952301.0,1804382913
+Birmingham,Birmingham,52.4800,-1.9025,United Kingdom,GB,GBR,Birmingham,,2919600.0,1826423213
+Minneapolis,Minneapolis,44.9635,-93.2678,United States,US,USA,Minnesota,,2892569.0,1840007830
+Tampa,Tampa,27.9945,-82.4447,United States,US,USA,Florida,,2861173.0,1840015982
+Brasília,Brasilia,-15.7939,-47.8828,Brazil,BR,BRA,Distrito Federal,primary,2817068.0,1076144436
+Stuttgart,Stuttgart,48.7775,9.1800,Germany,DE,DEU,Baden-Württemberg,admin,2787724.0,1276171358
+Rome,Rome,41.8933,12.4828,Italy,IT,ITA,Lazio,primary,2748109.0,1380382862
+Brooklyn,Brooklyn,40.6501,-73.9496,United States,US,USA,New York,,2736074.0,1840034030
+Denver,Denver,39.7620,-104.8758,United States,US,USA,Colorado,admin,2687458.0,1840018789
+Munich,Munich,48.1375,11.5750,Germany,DE,DEU,Bavaria,admin,2606021.0,1276692352
+Medellín,Medellin,6.2308,-75.5906,Colombia,CO,COL,Antioquia,admin,2529403.0,1170680389
+Hamburg,Hamburg,53.5500,10.0000,Germany,DE,DEU,Hamburg,admin,2484800.0,1276041799
+Cali,Cali,3.4206,-76.5222,Colombia,CO,COL,Valle del Cauca,admin,2471474.0,1170417589
+Vancouver,Vancouver,49.2500,-123.1000,Canada,CA,CAN,British Columbia,,2426160.0,1124825478
+Salvador,Salvador,-12.9747,-38.4767,Brazil,BR,BRA,Bahia,admin,2418005.0,1076923789
+Bucharest,Bucharest,44.4325,26.1039,Romania,RO,ROU,Bucureşti,primary,2412530.0,1642414442
+Queens,Queens,40.7498,-73.7976,United States,US,USA,New York,,2405464.0,1840034002
+Riverside,Riverside,33.9381,-117.3949,United States,US,USA,California,,2332836.0,1840020551
+Las Vegas,Las Vegas,36.2333,-115.2654,United States,US,USA,Nevada,,2248047.0,1840020364
+Vienna,Vienna,48.2083,16.3725,Austria,AT,AUT,Wien,primary,2223236.0,1040261752
+Baltimore,Baltimore,39.3051,-76.6144,United States,US,USA,Maryland,,2196524.0,1840001592
+St. Louis,St. Louis,38.6359,-90.2451,United States,US,USA,Missouri,,2130881.0,1840001651
+Stockholm,Stockholm,59.3294,18.0686,Sweden,SE,SWE,Stockholm,primary,2121000.0,1752425602
+Córdoba,Cordoba,-31.4167,-64.1833,Argentina,AR,ARG,Córdoba,admin,2106734.0,1032803249
+Portland,Portland,45.5371,-122.6500,United States,US,USA,Oregon,,2095808.0,1840019941
+Manaus,Manaus,-3.1189,-60.0217,Brazil,BR,BRA,Amazonas,admin,2063547.0,1076607274
+San Antonio,San Antonio,29.4632,-98.5238,United States,US,USA,Texas,,2058444.0,1840022220
+Tijuana,Tijuana,32.5250,-117.0333,Mexico,MX,MEX,Baja California,minor,2002000.0,1484708778
+Sacramento,Sacramento,38.5677,-121.4685,United States,US,USA,California,admin,1957738.0,1840021491
+Tilburg,Tilburg,51.5500,5.0833,Netherlands,NL,NLD,Noord-Brabant,minor,1944588.0,1528817379
+Ecatepec,Ecatepec,19.6097,-99.0600,Mexico,MX,MEX,México,minor,1929926.0,1484003694
+Austin,Austin,30.3005,-97.7522,United States,US,USA,Texas,admin,1905945.0,1840019590
+Santos,Santos,-23.9369,-46.3250,Brazil,BR,BRA,São Paulo,,1897551.0,1076033299
+Orlando,Orlando,28.4773,-81.3370,United States,US,USA,Florida,,1882705.0,1840015099
+Warsaw,Warsaw,52.2300,21.0111,Poland,PL,POL,Mazowieckie,primary,1860281.0,1616024847
+Curitiba,Curitiba,-25.4297,-49.2711,Brazil,BR,BRA,Paraná,admin,1773733.0,1076701712
+San Jose,San Jose,37.3012,-121.8480,United States,US,USA,California,,1771413.0,1840021570
+Pittsburgh,Pittsburgh,40.4397,-79.9763,United States,US,USA,Pennsylvania,,1749091.0,1840001254
+Indianapolis,Indianapolis,39.7771,-86.1458,United States,US,USA,Indiana,admin,1729849.0,1840030084
+Manhattan,Manhattan,40.7834,-73.9662,United States,US,USA,New York,,1694263.0,1840034000
+Cincinnati,Cincinnati,39.1413,-84.5060,United States,US,USA,Ohio,,1692702.0,1840003814
+Kansas City,Kansas City,39.1238,-94.5541,United States,US,USA,Missouri,,1689556.0,1840008535
+Cleveland,Cleveland,41.4764,-81.6805,United States,US,USA,Ohio,,1680247.0,1840000596
+Novosibirsk,Novosibirsk,55.0500,82.9500,Russia,RU,RUS,Novosibirskaya Oblast’,admin,1625631.0,1643399240
+Valencia,Valencia,39.4700,-0.3764,Spain,ES,ESP,Valencia,admin,1595000.0,1724981666
+León de los Aldama,Leon de los Aldama,21.1167,-101.6833,Mexico,MX,MEX,Guanajuato,minor,1579803.0,1484811199
+Puebla,Puebla,19.0333,-98.1833,Mexico,MX,MEX,Puebla,admin,1576259.0,1484416394
+Columbus,Columbus,39.9862,-82.9855,United States,US,USA,Ohio,admin,1572546.0,1840003760
+Sofia,Sofia,42.7000,23.3300,Bulgaria,BG,BGR,Sofia-Grad,primary,1547779.0,1100762037
+Recife,Recife,-8.0500,-34.9000,Brazil,BR,BRA,Pernambuco,admin,1488920.0,1076137337
+Zapopan,Zapopan,20.7167,-103.4000,Mexico,MX,MEX,Jalisco,minor,1476491.0,1484198680
+Bronx,Bronx,40.8501,-73.8662,United States,US,USA,New York,,1472654.0,1840033999
+Yekaterinburg,Yekaterinburg,56.8356,60.6128,Russia,RU,RUS,Sverdlovskaya Oblast’,admin,1468833.0,1643582706
+Amsterdam,Amsterdam,52.3728,4.8936,Netherlands,NL,NLD,Noord-Holland,primary,1459402.0,1528355309
+Virginia Beach,Virginia Beach,36.7335,-76.0435,United States,US,USA,Virginia,,1443020.0,1840003871
+Goiânia,Goiania,-16.6667,-49.2500,Brazil,BR,BRA,Goiás,admin,1437237.0,1076034054
+Charlotte,Charlotte,35.2083,-80.8303,United States,US,USA,North Carolina,,1427444.0,1840014557
+Kharkiv,Kharkiv,49.9925,36.2311,Ukraine,UA,UKR,Kharkivska Oblast,admin,1421125.0,1804588111
+Copenhagen,Copenhagen,55.6761,12.5683,Denmark,DK,DNK,Hovedstaden,primary,1366301.0,1208763942
+Helsinki,Helsinki,60.1708,24.9375,Finland,FI,FIN,Uusimaa,primary,1360075.0,1246177997
+Prague,Prague,50.0875,14.4214,Czechia,CZ,CZE,Praha,primary,1357326.0,1203744823
+Milan,Milan,45.4669,9.1900,Italy,IT,ITA,Lombardy,admin,1354196.0,1380724377
+Porto Alegre,Porto Alegre,-30.0331,-51.2300,Brazil,BR,BRA,Rio Grande do Sul,admin,1332570.0,1076658221
+Barranquilla,Barranquilla,10.9833,-74.8019,Colombia,CO,COL,Atlántico,admin,1326588.0,1170179113
+Guarulhos,Guarulhos,-23.4628,-46.5328,Brazil,BR,BRA,São Paulo,,1324781.0,1076730420
+Juárez,Juarez,31.7450,-106.4850,Mexico,MX,MEX,Chihuahua,minor,1321004.0,1484840083
+Calgary,Calgary,51.0500,-114.0667,Canada,CA,CAN,Alberta,,1306784.0,1124690423
+Belém,Belem,-1.4558,-48.5039,Brazil,BR,BRA,Pará,admin,1303389.0,1076646823
+Milwaukee,Milwaukee,43.0642,-87.9675,United States,US,USA,Wisconsin,,1290940.0,1840003046
+Providence,Providence,41.8230,-71.4187,United States,US,USA,Rhode Island,admin,1290271.0,1840003289
+Jacksonville,Jacksonville,30.3322,-81.6749,United States,US,USA,Florida,,1288298.0,1840015031
+Porto,Porto,41.1621,-8.6220,Portugal,PT,PRT,Porto,admin,1278210.0,1620356810
+Rosario,Rosario,-32.9575,-60.6394,Argentina,AR,ARG,Santa Fe,minor,1276000.0,1032770677
+Dublin,Dublin,53.3500,-6.2603,Ireland,IE,IRL,Dublin,primary,1263219.0,1372595407
+Kazan,Kazan,55.7964,49.1089,Russia,RU,RUS,Tatarstan,admin,1259173.0,1643101260
+Nizhniy Novgorod,Nizhniy Novgorod,56.3269,44.0075,Russia,RU,RUS,Nizhegorodskaya Oblast’,admin,1244254.0,1643012126
+Brussels,Brussels,50.8467,4.3525,Belgium,BE,BEL,Brussels-Capital Region,primary,1235192.0,1056469830
+Campinas,Campinas,-22.9058,-47.0608,Brazil,BR,BRA,São Paulo,,1213792.0,1076145766
+Belgrade,Belgrade,44.8200,20.4600,Serbia,RS,SRB,Beograd,primary,1197714.0,1688374696
+Chelyabinsk,Chelyabinsk,55.1547,61.3758,Russia,RU,RUS,Chelyabinskaya Oblast’,admin,1196680.0,1643224011
+Nashville,Nashville,36.1715,-86.7842,United States,US,USA,Tennessee,admin,1177657.0,1840036155
+Salt Lake City,Salt Lake City,40.7776,-111.9311,United States,US,USA,Utah,admin,1173879.0,1840021383
+Omsk,Omsk,54.9833,73.3667,Russia,RU,RUS,Omskaya Oblast’,admin,1172070.0,1643360863
+Samara,Samara,53.2028,50.1408,Russia,RU,RUS,Samarskaya Oblast’,admin,1169719.0,1643205757
+Raleigh,Raleigh,35.8324,-78.6429,United States,US,USA,North Carolina,admin,1163152.0,1840014497
+Edmonton,Edmonton,53.5344,-113.4903,Canada,CA,CAN,Alberta,admin,1151635.0,1124290735
+Rostov,Rostov,47.2225,39.7100,Russia,RU,RUS,Rostovskaya Oblast’,admin,1137704.0,1643013518
+Ufa,Ufa,54.7261,55.9475,Russia,RU,RUS,Bashkortostan,admin,1115560.0,1643722928
+Mexicali,Mexicali,32.6633,-115.4678,Mexico,MX,MEX,Baja California,admin,1102342.0,1484788702
+Sevilla,Sevilla,37.3900,-5.9900,Spain,ES,ESP,Andalusia,admin,1100000.0,1724991838
+Cologne,Cologne,50.9364,6.9528,Germany,DE,DEU,North Rhine-Westphalia,,1084831.0,1276015998
+Krasnoyarsk,Krasnoyarsk,56.0089,92.8719,Russia,RU,RUS,Krasnoyarskiy Kray,admin,1083865.0,1643544975
+Nezahualcóyotl,Nezahualcoyotl,19.4081,-99.0186,Mexico,MX,MEX,México,minor,1077208.0,1484074285
+Richmond,Richmond,37.5295,-77.4756,United States,US,USA,Virginia,admin,1073223.0,1840001698
+Ciudad Nezahualcóyotl,Ciudad Nezahualcoyotl,19.4006,-99.0148,Mexico,MX,MEX,México,,1072676.0,1484016661
+Ottawa,Ottawa,45.4247,-75.6950,Canada,CA,CAN,Ontario,primary,1068821.0,1124399363
+Oslo,Oslo,59.9133,10.7389,Norway,NO,NOR,Oslo,primary,1064235.0,1578324706
+Voronezh,Voronezh,51.6717,39.2106,Russia,RU,RUS,Voronezhskaya Oblast’,admin,1051995.0,1643811064
+Perm,Perm,58.0000,56.3167,Russia,RU,RUS,Permskiy Kray,admin,1048005.0,1643294442
+Memphis,Memphis,35.1087,-89.9663,United States,US,USA,Tennessee,,1037998.0,1840015457
+São Luís,Sao Luis,-2.5283,-44.3044,Brazil,BR,BRA,Maranhão,admin,1037775.0,1076819308
+Morelia,Morelia,19.7683,-101.1894,Mexico,MX,MEX,Michoacán,admin,1011704.0,1484669072
+Odesa,Odesa,46.4775,30.7326,Ukraine,UA,UKR,Odeska Oblast,admin,1010537.0,1804178102
+Arequipa,Arequipa,-16.4000,-71.5333,Peru,PE,PER,Arequipa,admin,1008290.0,1604723954
+Volgograd,Volgograd,48.7086,44.5147,Russia,RU,RUS,Volgogradskaya Oblast’,admin,1004763.0,1643577201
+Oklahoma City,Oklahoma City,35.4676,-97.5136,United States,US,USA,Oklahoma,admin,998806.0,1840020428
+Bordeaux,Bordeaux,44.8400,-0.5800,France,FR,FRA,Nouvelle-Aquitaine,admin,994920.0,1250449238
+Natal,Natal,-6.9838,-60.2699,Brazil,BR,BRA,Amazonas,,980588.0,1076336975
+Hartford,Hartford,41.7661,-72.6834,United States,US,USA,Connecticut,admin,974684.0,1840004773
+Dnipro,Dnipro,48.4675,35.0400,Ukraine,UA,UKR,Dnipropetrovska Oblast,admin,968502.0,1804152933
+Málaga,Malaga,36.7194,-4.4200,Spain,ES,ESP,Andalusia,minor,967250.0,1724397372
+Louisville,Louisville,38.1663,-85.6485,United States,US,USA,Kentucky,,963812.0,1840030815
+Maceió,Maceio,-9.6658,-35.7350,Brazil,BR,BRA,Alagoas,admin,957916.0,1076440479
+Teresina,Teresina,-5.0949,-42.8042,Brazil,BR,BRA,Piauí,admin,953172.0,1076727667
+Krasnodar,Krasnodar,45.0333,38.9667,Russia,RU,RUS,Krasnodarskiy Kray,admin,948827.0,1643438227
+Buffalo,Buffalo,42.9018,-78.8487,United States,US,USA,New York,,944589.0,1840000386
+Trujillo,Trujillo,-8.1120,-79.0288,Peru,PE,PER,La Libertad,admin,935147.0,1604613706
+Aguascalientes,Aguascalientes,21.8760,-102.2960,Mexico,MX,MEX,Aguascalientes,admin,934424.0,1484666646
+New Orleans,New Orleans,30.0687,-89.9288,United States,US,USA,Louisiana,,932759.0,1840001839
+Fort Worth,Fort Worth,32.7817,-97.3474,United States,US,USA,Texas,,924663.0,1840020696
+Riga,Riga,56.9489,24.1064,Latvia,LV,LVA,Rīga,primary,920643.0,1428586192
+Cartagena,Cartagena,10.4000,-75.5000,Colombia,CO,COL,Bolívar,admin,914552.0,1170886102
+Naples,Naples,40.8333,14.2500,Italy,IT,ITA,Campania,admin,913462.0,1380646673
+Santiago del Estero,Santiago del Estero,-27.7833,-64.2667,Argentina,AR,ARG,Santiago del Estero,admin,911506.0,1032492280
+Naucalpan de Juárez,Naucalpan de Juarez,19.4753,-99.2378,Mexico,MX,MEX,México,minor,910407.0,1484850125
+Bridgeport,Bridgeport,41.1918,-73.1954,United States,US,USA,Connecticut,,908251.0,1840004836
+Donetsk,Donetsk,48.0028,37.8053,Ukraine,UA,UKR,Donetska Oblast,admin,901645.0,1804963805
+Campo Grande,Campo Grande,-20.4839,-54.6150,Brazil,BR,BRA,Mato Grosso do Sul,admin,897938.0,1076660445
+São Gonçalo,Sao Goncalo,-22.8269,-43.0539,Brazil,BR,BRA,Rio de Janeiro,,896744.0,1076485783
+Bucaramanga,Bucaramanga,7.1333,-73.0000,Colombia,CO,COL,Santander,admin,893040.0,1170940590
+Mérida,Merida,20.9700,-89.6200,Mexico,MX,MEX,Yucatán,admin,892363.0,1484396779
+Cancún,Cancun,21.1606,-86.8475,Mexico,MX,MEX,Quintana Roo,minor,888797.0,1484010310
+Tucson,Tucson,32.1541,-110.8787,United States,US,USA,Arizona,,878320.0,1840022101
+Chihuahua,Chihuahua,28.6369,-106.0769,Mexico,MX,MEX,Chihuahua,admin,878062.0,1484335603
+Marseille,Marseille,43.2964,5.3700,France,FR,FRA,Provence-Alpes-Côte d’Azur,admin,873076.0,1250774071
+El Paso,El Paso,31.8476,-106.4300,United States,US,USA,Texas,,865270.0,1840023252
+Saltillo,Saltillo,25.4231,-100.9919,Mexico,MX,MEX,Coahuila,admin,864431.0,1484107245
+El Dorado,El Dorado,24.8080,-107.3970,Mexico,MX,MEX,Sinaloa,,858638.0,1484719986
+Portsmouth,Portsmouth,50.8058,-1.0872,United Kingdom,GB,GBR,Portsmouth,,855679.0,1826964096
+Tyumen,Tyumen,57.1500,65.5333,Russia,RU,RUS,Tyumenskaya Oblast’,admin,855600.0,1643040435
+Southampton,Southampton,50.9025,-1.4042,United Kingdom,GB,GBR,Southampton,,855569.0,1826602892
+Hermosillo,Hermosillo,29.0989,-110.9542,Mexico,MX,MEX,Sonora,admin,855563.0,1484015319
+Saratov,Saratov,51.5333,46.0167,Russia,RU,RUS,Saratovskaya Oblast’,admin,845300.0,1643556540
+Iguaçu,Iguacu,-22.7400,-43.4700,Brazil,BR,BRA,Rio de Janeiro,,844583.0,1076339714
+Turin,Turin,45.0792,7.6761,Italy,IT,ITA,Piedmont,admin,841600.0,1380244627
+João Pessoa,Joao Pessoa,-7.1200,-34.8800,Brazil,BR,BRA,Paraíba,admin,833932.0,1076922014
+Omaha,Omaha,41.2627,-96.0529,United States,US,USA,Nebraska,,821345.0,1840009315
+São Bernardo do Campo,Sao Bernardo do Campo,-23.7000,-46.5500,Brazil,BR,BRA,São Paulo,,810729.0,1076793227
+Culiacán,Culiacan,24.8069,-107.3939,Mexico,MX,MEX,Sinaloa,admin,808416.0,1484516810
+Cúcuta,Cucuta,7.8942,-72.5039,Colombia,CO,COL,Norte de Santander,admin,806378.0,1170743755
+Kraków,Krakow,50.0614,19.9372,Poland,PL,POL,Małopolskie,admin,804237.0,1616172264
+Thessaloníki,Thessaloniki,40.6403,22.9347,Greece,GR,GRC,Kentrikí Makedonía,admin,802572.0,1300397999
+Querétaro,Queretaro,20.5875,-100.3928,Mexico,MX,MEX,Querétaro,admin,801940.0,1484604775
+Palermo,Palermo,2.8917,-75.4375,Colombia,CO,COL,Huila,minor,800000.0,1170614290
+McAllen,McAllen,26.2252,-98.2467,United States,US,USA,Texas,,797341.0,1840021024
+Hempstead,Hempstead,40.6629,-73.6089,United States,US,USA,New York,,789763.0,1840005293
+Leeds,Leeds,53.7975,-1.5436,United Kingdom,GB,GBR,Leeds,,789194.0,1826343963
+Birmingham,Birmingham,33.5279,-86.7971,United States,US,USA,Alabama,,782111.0,1840006507
+Bilbao,Bilbao,43.2569,-2.9236,Spain,ES,ESP,Basque Country,minor,775000.0,1724331267
+Frankfurt,Frankfurt,50.1106,8.6822,Germany,DE,DEU,Hesse,minor,773068.0,1276054552
+San Luis Potosí,San Luis Potosi,22.1511,-100.9761,Mexico,MX,MEX,San Luis Potosí,admin,772828.0,1484583620
+Albuquerque,Albuquerque,35.1054,-106.6465,United States,US,USA,New Mexico,,769986.0,1840019176
+Zagreb,Zagreb,45.8131,15.9775,Croatia,HR,HRV,"Zagreb, Grad",primary,767131.0,1191233290
