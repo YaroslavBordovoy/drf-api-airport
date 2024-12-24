@@ -8,7 +8,7 @@ from airport.models import Crew
 fake = Faker()
 
 
-def add_crews(user_input: int = 50) -> None:
+def add_crews(user_input: int) -> None:
     roles = ["P", "CP", "FA"]
     crew_objects = [
         Crew(
@@ -21,4 +21,4 @@ def add_crews(user_input: int = 50) -> None:
 
     Crew.objects.bulk_create(crew_objects)
 
-    print("Crews added successfully")
+    print(f"Crews added successfully: {user_input}")

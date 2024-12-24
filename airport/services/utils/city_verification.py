@@ -1,7 +1,7 @@
 import csv
 
 
-FILE_PATH = "airport/services/data/data_cities.csv"
+FILE_PATH = "airport/services/data/data_cities_lite.csv"
 
 
 def get_city(city) -> bool:

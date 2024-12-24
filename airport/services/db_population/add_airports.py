@@ -4,7 +4,7 @@ import random
 from airport.models import Airport
 
 
-FILE_PATH = "airport/services/data/data_cities.csv"
+FILE_PATH = "airport/services/data/data_cities_lite.csv"
 
 
 def get_cities(user_input: int) -> list[str]:
@@ -39,7 +39,7 @@ def create_airports(cities: list[str]) -> list[dict]:
     return airports
 
 
-def add_airports(user_input: int = 50) -> None:
+def add_airports(user_input: int) -> None:
     cities = get_cities(user_input)
     airports = create_airports(cities)
 
@@ -55,4 +55,4 @@ def add_airports(user_input: int = 50) -> None:
     airport_objects = [Airport(**airport) for airport in unique_airports]
     Airport.objects.bulk_create(airport_objects)
 
-    print("Airports added successfully")
+    print(f"Airports added successfully: {user_input}")

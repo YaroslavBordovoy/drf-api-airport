@@ -21,4 +21,4 @@ def add_users() -> None:
 
     User.objects.bulk_create(user_objects)
 
-    print("Users added successfully")
+    print("Users added successfully: 10")

@@ -4,13 +4,13 @@ from airport.choices import AirplaneName
 from airport.models import Airplane, AirplaneType
 
 
-def add_airplanes(user_input: int = 10) -> None:
+def add_airplanes(user_input: int) -> None:
     airplane_objects = []
 
     for _ in range(user_input):
         airplane = Airplane(
             name=random.choice([choice[0] for choice in AirplaneName.choices]),
-            rows=random.randint(15, 40),
+            rows=random.randint(10, 50),
             seats_in_row=random.randint(4, 6),
         )
 
@@ -23,4 +23,4 @@ def add_airplanes(user_input: int = 10) -> None:
 
     Airplane.objects.bulk_create(airplane_objects)
 
-    print("Airplanes added successfully")
+    print(f"Airplanes added successfully: {user_input}")

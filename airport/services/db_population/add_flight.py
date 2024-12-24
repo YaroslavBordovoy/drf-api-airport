@@ -24,7 +24,7 @@ def get_time() -> tuple:
     return departure_time, arrival_time
 
 
-def add_flight(user_input: int = 10) -> None:
+def add_flight(user_input: int) -> None:
     routes = Route.objects.all()
     airplanes = Airplane.objects.all()
     crews = Crew.objects.all()
@@ -59,4 +59,4 @@ def add_flight(user_input: int = 10) -> None:
 
         flight.crew.add(*crew_members)
 
-    print("Flights added successfully")
+    print(f"Flights added successfully: {user_input}")

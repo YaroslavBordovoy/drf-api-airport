@@ -5,7 +5,7 @@ from django.contrib.auth import get_user_model
 from airport.models import Order
 
 
-def add_orders(user_input: int = 10) -> None:
+def add_orders(user_input: int) -> None:
     users = get_user_model().objects.all()
 
     order_objects = [
@@ -17,4 +17,4 @@ def add_orders(user_input: int = 10) -> None:
 
     Order.objects.bulk_create(order_objects)
 
-    print("Orders added successfully")
+    print(f"Orders added successfully: {user_input}")

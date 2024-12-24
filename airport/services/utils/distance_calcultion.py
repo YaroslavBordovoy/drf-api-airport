@@ -2,7 +2,7 @@ import csv
 import math
 
 
-FILE_PATH = "airport/services/data/data_cities.csv"
+FILE_PATH = "airport/services/data/data_cities_lite.csv"
 
 city_cache = {}
 

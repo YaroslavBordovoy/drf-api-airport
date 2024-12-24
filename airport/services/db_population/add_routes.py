@@ -7,7 +7,7 @@ from airport.services.utils.distance_calcultion import (
 )
 
 
-def add_routes(user_input: int = 10):
+def add_routes(user_input: int):
     cities = list(Airport.objects.values_list("closest_big_city", flat=True))
     routes = []
 
@@ -24,12 +24,17 @@ def add_routes(user_input: int = 10):
 
             distance = calculate_distance(source_coords, destination_coords)
 
+            source_airport = Airport.objects.filter(
+                closest_big_city=source_city
+            ).first()
+            destination_airport = Airport.objects.filter(
+                closest_big_city=destination_city
+            ).first()
+
             routes.append(
                 Route(
-                    source=Airport.objects.get(closest_big_city=source_city),
-                    destination=Airport.objects.get(
-                        closest_big_city=destination_city
-                    ),
+                    source=source_airport,
+                    destination=destination_airport,
                     distance=distance
                 )
             )
@@ -39,4 +44,4 @@ def add_routes(user_input: int = 10):
 
     Route.objects.bulk_create(routes)
 
-    print("Routes added successfully")
+    print(f"Routes added successfully: {user_input}")
