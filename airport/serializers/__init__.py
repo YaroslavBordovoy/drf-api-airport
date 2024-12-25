@@ -7,7 +7,7 @@ from .flight_serializers import (
     FlightListSerializer,
     FlightDetailSerializer,
 )
-from .order_serializers import OrderSerializer
+from .order_serializers import OrderSerializer, OrderListSerializer
 from .route_serializers import (
     RouteSerializer,
     RouteListSerializer,

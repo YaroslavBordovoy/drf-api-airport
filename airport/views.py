@@ -1,6 +1,7 @@
 from django.db.models import Count, F
-from rest_framework import viewsets
 from django_filters import rest_framework as filters
+from drf_spectacular.utils import extend_schema
+from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticated
 
 from airport.filters import (
@@ -23,6 +24,15 @@ from airport.models import (
     Order,
 )
 from airport.permissions import IsAdminOrIfAuthenticatedReadOnly
+from airport.schema_params import (
+    FLIGHT_LIST_PARAMETERS,
+    CREW_LIST_PARAMETERS,
+    ROUTE_LIST_PARAMETERS,
+    AIRPORT_LIST_PARAMETERS,
+    AIRPLANE_LIST_PARAMETERS,
+    TICKET_LIST_PARAMETERS,
+    ORDER_LIST_PARAMETERS
+)
 from airport.serializers import (
     FlightSerializer,
     FlightDetailSerializer,
@@ -38,8 +48,8 @@ from airport.serializers import (
     TicketDetailSerializer,
     TicketListSerializer,
     OrderSerializer,
+    OrderListSerializer,
 )
-from airport.serializers.order_serializers import OrderListSerializer
 
 
 class FlightViewSet(viewsets.ModelViewSet):
@@ -65,6 +75,13 @@ class FlightViewSet(viewsets.ModelViewSet):
 
         return self.queryset
 
+    @extend_schema(
+        parameters=FLIGHT_LIST_PARAMETERS
+    )
+    def list(self, request, *args, **kwargs):
+        """Get list of flights"""
+        return super().list(request, *args, **kwargs)
+
     def get_serializer_class(self):
         if self.action == "list":
             return FlightListSerializer
@@ -82,6 +99,13 @@ class CrewViewSet(viewsets.ModelViewSet):
     filter_backends = (filters.DjangoFilterBackend,)
     filterset_class = CrewFilter
 
+    @extend_schema(
+        parameters=CREW_LIST_PARAMETERS
+    )
+    def list(self, request, *args, **kwargs):
+        """Get list of crews"""
+        return super().list(request, *args, **kwargs)
+
 
 class RouteViewSet(viewsets.ModelViewSet):
     queryset = Route.objects.select_related("source", "destination")
@@ -98,6 +122,12 @@ class RouteViewSet(viewsets.ModelViewSet):
 
         return RouteSerializer
 
+    @extend_schema(
+        parameters=ROUTE_LIST_PARAMETERS
+    )
+    def list(self, request, *args, **kwargs):
+        """Get list of routes"""
+        return super().list(request, *args, **kwargs)
 
 class AirportViewSet(viewsets.ModelViewSet):
     queryset = Airport.objects.all()
@@ -106,6 +136,12 @@ class AirportViewSet(viewsets.ModelViewSet):
     filter_backends = (filters.DjangoFilterBackend,)
     filterset_class = AirportFilter
 
+    @extend_schema(
+        parameters=AIRPORT_LIST_PARAMETERS
+    )
+    def list(self, request, *args, **kwargs):
+        """Get list of airports"""
+        return super().list(request, *args, **kwargs)
 
 class AirplaneViewSet(viewsets.ModelViewSet):
     queryset = Airplane.objects.select_related("airplane_type")
@@ -113,6 +149,13 @@ class AirplaneViewSet(viewsets.ModelViewSet):
     permission_classes = (IsAdminOrIfAuthenticatedReadOnly,)
     filter_backends = (filters.DjangoFilterBackend,)
     filterset_class = AirplaneFilter
+
+    @extend_schema(
+        parameters=AIRPLANE_LIST_PARAMETERS
+    )
+    def list(self, request, *args, **kwargs):
+        """Get list of airplanes"""
+        return super().list(request, *args, **kwargs)
 
 
 class AirplaneTypeViewSet(viewsets.ModelViewSet):
@@ -145,6 +188,13 @@ class TicketViewSet(viewsets.ModelViewSet):
 
         return TicketSerializer
 
+    @extend_schema(
+        parameters=TICKET_LIST_PARAMETERS
+    )
+    def list(self, request, *args, **kwargs):
+        """Get list of tickets"""
+        return super().list(request, *args, **kwargs)
+
 
 class OrderViewSet(viewsets.ModelViewSet):
     queryset = Order.objects.select_related("user").prefetch_related(
@@ -167,3 +217,10 @@ class OrderViewSet(viewsets.ModelViewSet):
             return OrderListSerializer
 
         return OrderSerializer
+
+    @extend_schema(
+        parameters=ORDER_LIST_PARAMETERS
+    )
+    def list(self, request, *args, **kwargs):
+        """Get list of orders"""
+        return super().list(request, *args, **kwargs)
