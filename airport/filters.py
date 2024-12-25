@@ -51,7 +51,7 @@ class FlightFilter(rest_framework.FilterSet):
         field_name="departure_time",
         lookup_expr="icontains"
     )
-    arrival_time = rest_framework.CharFilter(
+    arrival_time = rest_framework.DateFilter(
         field_name="arrival_time",
         lookup_expr="icontains"
     )
@@ -135,7 +135,7 @@ class TicketFilter(rest_framework.FilterSet):
 
 
 class OrderFilter(rest_framework.FilterSet):
-    created_at = rest_framework.CharFilter(
+    created_at = rest_framework.DateFilter(
         field_name="created_at",
         lookup_expr="icontains"
     )
