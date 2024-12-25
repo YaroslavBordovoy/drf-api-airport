@@ -18,14 +18,23 @@ app_name = "airport"
 router = routers.DefaultRouter()
 
 router.register("flights", FlightViewSet, basename="flight")
-router.register("crews", CrewViewSet)
+router.register("crews", CrewViewSet, basename="crew")
 router.register("routes", RouteViewSet, basename="route")
-router.register("airports", AirportViewSet)
+router.register("airports", AirportViewSet, basename="airport")
 router.register("airplanes", AirplaneViewSet, basename="airplane")
-router.register("airplane-types", AirplaneTypeViewSet)
+router.register("airplane-types", AirplaneTypeViewSet, basename="airplane-type")
 router.register("tickets", TicketViewSet, basename="ticket")
-router.register("orders", OrderViewSet)
+router.register("orders", OrderViewSet, basename="order")
 
 urlpatterns = [
     path("", include(router.urls))
 ]
+
+# def create(self, validated_data):
+#     tickets_data = validated_data.pop("order_tickets")
+#     order = Order.objects.create(**validated_data)
+#
+#     for ticket_data in tickets_data:
+#         Ticket.objects.create(order=order, **ticket_data)
+#
+#     return order
