@@ -1,7 +1,7 @@
 from rest_framework import serializers
 
 from airport.models import Flight
-from airport.serializers.route_serializers import RouteSerializer, RouteListSerializer, RouteDetailSerializer
+from airport.serializers.route_serializers import RouteDetailSerializer
 from airport.serializers.airplane_serializers import AirplaneSerializer
 from airport.serializers.crew_serializers import CrewSerializer
 

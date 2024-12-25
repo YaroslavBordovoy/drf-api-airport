@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     "debug_toolbar",
     "rest_framework",
     "drf_spectacular",
+    "django_filters",
 
     # my apps
     "accounts",
@@ -112,6 +113,10 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+
+REST_FRAMEWORK = {
+    "DEFAULT_FILTER_BACKENDS": ["django_filters.rest_framework.DjangoFilterBackend"]
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/

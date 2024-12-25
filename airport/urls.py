@@ -29,12 +29,3 @@ router.register("orders", OrderViewSet, basename="order")
 urlpatterns = [
     path("", include(router.urls))
 ]
-
-# def create(self, validated_data):
-#     tickets_data = validated_data.pop("order_tickets")
-#     order = Order.objects.create(**validated_data)
-#
-#     for ticket_data in tickets_data:
-#         Ticket.objects.create(order=order, **ticket_data)
-#
-#     return order

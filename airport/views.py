@@ -1,5 +1,11 @@
 from rest_framework import viewsets
+from django_filters import rest_framework as filters
 
+from airport.filters import (
+    FlightFilter,
+    CrewFilter,
+    RouteFilter, AirportFilter, AirplaneFilter, TicketFilter, OrderFilter,
+)
 from airport.models import (
     Flight,
     Crew,
@@ -36,6 +42,8 @@ class FlightViewSet(viewsets.ModelViewSet):
         "airplane",
         "airplane__airplane_type"
     ).prefetch_related("crew")
+    filter_backends = (filters.DjangoFilterBackend,)
+    filterset_class = FlightFilter
 
     def get_serializer_class(self):
         if self.action == "list":
@@ -50,10 +58,14 @@ class FlightViewSet(viewsets.ModelViewSet):
 class CrewViewSet(viewsets.ModelViewSet):
     queryset = Crew.objects.all()
     serializer_class = CrewSerializer
+    filter_backends = (filters.DjangoFilterBackend,)
+    filterset_class = CrewFilter
 
 
 class RouteViewSet(viewsets.ModelViewSet):
     queryset = Route.objects.select_related("source", "destination")
+    filter_backends = (filters.DjangoFilterBackend,)
+    filterset_class = RouteFilter
 
     def get_serializer_class(self):
         if self.action == "list":
@@ -68,11 +80,15 @@ class RouteViewSet(viewsets.ModelViewSet):
 class AirportViewSet(viewsets.ModelViewSet):
     queryset = Airport.objects.all()
     serializer_class = AirportSerializer
+    filter_backends = (filters.DjangoFilterBackend,)
+    filterset_class = AirportFilter
 
 
 class AirplaneViewSet(viewsets.ModelViewSet):
     queryset = Airplane.objects.select_related("airplane_type")
     serializer_class = AirplaneSerializer
+    filter_backends = (filters.DjangoFilterBackend,)
+    filterset_class = AirplaneFilter
 
 
 class AirplaneTypeViewSet(viewsets.ModelViewSet):
@@ -91,6 +107,8 @@ class TicketViewSet(viewsets.ModelViewSet):
     ).prefetch_related(
         "flight__crew",
     )
+    filter_backends = (filters.DjangoFilterBackend,)
+    filterset_class = TicketFilter
 
     def get_serializer_class(self):
         if self.action == "list":
@@ -105,6 +123,8 @@ class TicketViewSet(viewsets.ModelViewSet):
 class OrderViewSet(viewsets.ModelViewSet):
     queryset = Order.objects.select_related("user").prefetch_related("order_tickets")
     serializer_class = OrderSerializer
+    filter_backends = (filters.DjangoFilterBackend,)
+    filterset_class = OrderFilter
 
     def get_queryset(self):
         return self.queryset.filter(user=self.request.user)
