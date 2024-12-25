@@ -104,6 +104,10 @@ class Route(models.Model):
     def __str__(self) -> str:
         return f"{self.source} → {self.destination}"
 
+    @property
+    def route(self):
+        return self.__str__()
+
     def clean(self):
         if self.source == self.destination:
             raise ValidationError(
