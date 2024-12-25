@@ -242,7 +242,9 @@ class Ticket(models.Model):
     order = models.ForeignKey(
         to="Order",
         on_delete=models.CASCADE,
-        related_name="order_tickets"
+        related_name="order_tickets",
+        null=True,
+        blank=True
     )
 
     class Meta:
