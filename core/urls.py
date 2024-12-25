@@ -33,8 +33,16 @@ urlpatterns = (
         path("api/airport/", include("airport.urls", namespace="airport")),
         path("api/user/", include("accounts.urls", namespace="user")),
         path("api/doc/", SpectacularAPIView.as_view(), name="schema"),
-        path("api/doc/swagger/", SpectacularSwaggerView.as_view(url_name="schema"), name="swagger-ui"),
-        path("api/doc/redoc/", SpectacularRedocView.as_view(url_name="schema"), name="redoc"),
+        path(
+            "api/doc/swagger/",
+            SpectacularSwaggerView.as_view(url_name="schema"),
+            name="swagger-ui"
+        ),
+        path(
+            "api/doc/redoc/",
+            SpectacularRedocView.as_view(url_name="schema"),
+            name="redoc"
+        ),
     ]
     + debug_toolbar_urls()
     + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

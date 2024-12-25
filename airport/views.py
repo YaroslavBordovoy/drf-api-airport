@@ -129,6 +129,7 @@ class RouteViewSet(viewsets.ModelViewSet):
         """Get list of routes"""
         return super().list(request, *args, **kwargs)
 
+
 class AirportViewSet(viewsets.ModelViewSet):
     queryset = Airport.objects.all()
     serializer_class = AirportSerializer
@@ -142,6 +143,7 @@ class AirportViewSet(viewsets.ModelViewSet):
     def list(self, request, *args, **kwargs):
         """Get list of airports"""
         return super().list(request, *args, **kwargs)
+
 
 class AirplaneViewSet(viewsets.ModelViewSet):
     queryset = Airplane.objects.select_related("airplane_type")
