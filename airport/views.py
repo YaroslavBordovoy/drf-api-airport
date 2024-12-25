@@ -1,3 +1,4 @@
+from django.db.models import Count, F
 from rest_framework import viewsets
 from django_filters import rest_framework as filters
 
@@ -35,15 +36,24 @@ from airport.serializers import (
 
 
 class FlightViewSet(viewsets.ModelViewSet):
-    queryset = Flight.objects.select_related(
-        "route",
-        "route__source",
-        "route__destination",
-        "airplane",
-        "airplane__airplane_type"
-    ).prefetch_related("crew")
     filter_backends = (filters.DjangoFilterBackend,)
     filterset_class = FlightFilter
+
+    def get_queryset(self):
+        self.queryset = Flight.objects.select_related(
+            "route",
+            "route__source",
+            "route__destination",
+            "airplane",
+            "airplane__airplane_type"
+        ).prefetch_related("crew")
+
+        if self.action == "list":
+            return self.queryset.annotate(
+                tickets_available=F("airplane__rows") * F("airplane__seats_in_row") - Count("flight_tickets")
+            ).order_by("id")
+
+        return self.queryset
 
     def get_serializer_class(self):
         if self.action == "list":
