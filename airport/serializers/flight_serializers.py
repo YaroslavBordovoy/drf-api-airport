@@ -18,6 +18,17 @@ class FlightSerializer(serializers.ModelSerializer):
             "crew"
         )
 
+    def validate(self, attrs):
+        crew_data = attrs.pop("crew", None)
+        flight = Flight(**attrs)
+
+        try:
+            flight.clean()
+        except ValueError:
+            raise serializers.ValidationError
+
+        return attrs
+
 
 class FlightListSerializer(serializers.ModelSerializer):
     departure_airport = serializers.CharField(source="route.source.name", read_only=True)
