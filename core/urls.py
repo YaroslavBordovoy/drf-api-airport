@@ -26,6 +26,7 @@ urlpatterns = (
     [
         path("admin/", admin.site.urls),
         path("api/airport/", include("airport.urls", namespace="airport")),
+        path("api/user/", include("accounts.urls", namespace="user")),
     ]
     + debug_toolbar_urls()
     + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
