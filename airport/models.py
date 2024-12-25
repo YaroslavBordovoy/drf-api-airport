@@ -117,7 +117,9 @@ class Route(models.Model):
         try:
             self.distance = calculate_distance(
                 source_coords=get_coord(self.source.closest_big_city),
-                destination_coords=get_coord(self.destination.closest_big_city)
+                destination_coords=get_coord(
+                    self.destination.closest_big_city
+                )
             )
         except ValidationError as e:
             raise ValidationError(f"Error calculating distance: {e}")
@@ -183,7 +185,6 @@ class Airplane(models.Model):
         null=True,
         blank=True,
         upload_to=airplane_image_file_path,
-        default="defaults/default_airplane.jpg",
     )
 
     class Meta:
