@@ -18,7 +18,7 @@ def get_coord(city: str) -> dict:
             if row["city_ascii"] == city:
                 city_coords = {
                     "lat": float(row["lat"]),
-                    "lng": float(row["lng"])
+                    "lng": float(row["lng"]),
                 }
                 city_cache[city] = city_coords
 
@@ -33,8 +33,7 @@ def calculate_distance(source_coords: dict, destination_coords: dict) -> float:
     earth_radius = 6371
 
     lat_1, lng_1, lat_2, lng_2 = map(
-        math.radians,
-        [lat_1, lng_1, lat_2, lng_2]
+        math.radians, [lat_1, lng_1, lat_2, lng_2]
     )
 
     delta_lat = lat_2 - lat_1

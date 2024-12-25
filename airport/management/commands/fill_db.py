@@ -22,8 +22,8 @@ class Command(BaseCommand):
             "user_input",
             nargs="?",
             type=int,
-            default=50,
-            help="Number of entries to create (default: 50)"
+            default=30,
+            help="Number of entries to create (default: 30)"
         )
 
     def handle(self, *args, **kwargs):

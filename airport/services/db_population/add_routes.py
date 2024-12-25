@@ -3,7 +3,7 @@ import random
 from airport.models import Route, Airport
 from airport.services.utils.distance_calcultion import (
     get_coord,
-    calculate_distance
+    calculate_distance,
 )
 
 

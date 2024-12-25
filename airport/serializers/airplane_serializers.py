@@ -5,6 +5,7 @@ from airport.models import Airplane
 
 class AirplaneSerializer(serializers.ModelSerializer):
     airplane_type = serializers.StringRelatedField()
+
     class Meta:
         model = Airplane
         fields = (

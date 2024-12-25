@@ -2,11 +2,18 @@ from django.db import transaction
 from rest_framework import serializers
 
 from airport.models import Order, Ticket
-from airport.serializers.ticket_serializers import TicketSerializer, TicketListSerializer
+from airport.serializers.ticket_serializers import (
+    TicketSerializer,
+    TicketListSerializer
+)
 
 
 class OrderSerializer(serializers.ModelSerializer):
-    order_tickets = TicketSerializer(many=True, read_only=False, allow_empty=False)
+    order_tickets = TicketSerializer(
+        many=True,
+        read_only=False,
+        allow_empty=False
+    )
 
     class Meta:
         model = Order

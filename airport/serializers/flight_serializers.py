@@ -15,7 +15,7 @@ class FlightSerializer(serializers.ModelSerializer):
             "airplane",
             "departure_time",
             "arrival_time",
-            "crew"
+            "crew",
         )
 
     def validate(self, attrs):
@@ -31,10 +31,22 @@ class FlightSerializer(serializers.ModelSerializer):
 
 
 class FlightListSerializer(serializers.ModelSerializer):
-    departure_airport = serializers.CharField(source="route.source.name", read_only=True)
-    arrival_airport = serializers.CharField(source="route.destination.name", read_only=True)
-    airplane_name = serializers.CharField(source="airplane.name", read_only=True)
-    airplane_type = serializers.CharField(source="airplane.airplane_type", read_only=True)
+    departure_airport = serializers.CharField(
+        source="route.source.name",
+        read_only=True
+    )
+    arrival_airport = serializers.CharField(
+        source="route.destination.name",
+        read_only=True
+    )
+    airplane_name = serializers.CharField(
+        source="airplane.name",
+        read_only=True
+    )
+    airplane_type = serializers.CharField(
+        source="airplane.airplane_type",
+        read_only=True
+    )
     crew = serializers.SlugRelatedField(
         many=True,
         read_only=True,
