@@ -33,6 +33,7 @@ from airport.serializers import (
     TicketListSerializer,
     OrderSerializer,
 )
+from airport.serializers.order_serializers import OrderListSerializer
 
 
 class FlightViewSet(viewsets.ModelViewSet):
@@ -131,8 +132,11 @@ class TicketViewSet(viewsets.ModelViewSet):
 
 
 class OrderViewSet(viewsets.ModelViewSet):
-    queryset = Order.objects.select_related("user").prefetch_related("order_tickets")
-    serializer_class = OrderSerializer
+    queryset = Order.objects.select_related("user").prefetch_related(
+        "order_tickets__flight__route__source",
+        "order_tickets__flight__route__destination",
+        "order_tickets__flight__airplane",
+    )
     filter_backends = (filters.DjangoFilterBackend,)
     filterset_class = OrderFilter
 
@@ -141,3 +145,9 @@ class OrderViewSet(viewsets.ModelViewSet):
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
+
+    def get_serializer_class(self):
+        if self.action in ("list", "retrieve"):
+            return OrderListSerializer
+
+        return OrderSerializer

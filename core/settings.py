@@ -20,7 +20,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-@+1973z0d=n7-ejro-7a=r05*=+s9*2)dgq+91a7*_wgo8+vcj"
+SECRET_KEY = (
+    "django-insecure-@+1973z0d=n7-ejro-7a=r05*=+s9*2)dgq+91a7*_wgo8+vcj"
+)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -40,13 +42,11 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-
     # 3rd party applications
     "debug_toolbar",
     "rest_framework",
     "drf_spectacular",
     "django_filters",
-
     # my apps
     "accounts",
     "airport",
@@ -115,7 +115,11 @@ AUTH_PASSWORD_VALIDATORS = [
 
 
 REST_FRAMEWORK = {
-    "DEFAULT_FILTER_BACKENDS": ["django_filters.rest_framework.DjangoFilterBackend"]
+    "DEFAULT_FILTER_BACKENDS": [
+        "django_filters.rest_framework.DjangoFilterBackend"
+    ],
+    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.LimitOffsetPagination",
+    "PAGE_SIZE": 10,
 }
 
 # Internationalization
