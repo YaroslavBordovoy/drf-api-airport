@@ -15,16 +15,19 @@ RUN adduser \
     --shell "/sbin/nologin" \
     --no-create-home \
     --uid "${UID}" \
-    appuser
+    my_user
 
 RUN --mount=type=cache,target=/root/.cache/pip \
     --mount=type=bind,source=requirements.txt,target=requirements.txt \
     python -m pip install -r requirements.txt
 
-USER appuser
-
 COPY . .
+
+RUN mkdir -p /files/media
+
+RUN chown -R my_user /files/media
+RUN chmod -R 755 /files/media
 
 EXPOSE 8000
 
-CMD python manage.py runserver
+USER my_user

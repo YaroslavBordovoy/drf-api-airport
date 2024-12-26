@@ -13,7 +13,13 @@ services:
       sh -c "python manage.py migrate && 
             python manage.py runserver 0.0.0.0:8000"
     depends_on:
-      - db
+      db:
+        condition: service_healthy
+    healthcheck:
+      test: [ "CMD-SHELL", "curl -f http://localhost:8000 || exit 1" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
   db:
     image: postgres:16-alpine
@@ -24,33 +30,12 @@ services:
       - "5432:5432"
     volumes:
       - my_db:$PGDATA
+    healthcheck:
+      test: [ "CMD", "pg_isready", "-U", "airport" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
 volumes:
   my_db:
   my_media:
-
-#         condition: service_healthy
-#   db:
-#     image: postgres
-#     restart: always
-#     user: postgres
-#     secrets:
-#       - db-password
-#     volumes:
-#       - db-data:/var/lib/postgresql/data
-#     environment:
-#       - POSTGRES_DB=example
-#       - POSTGRES_PASSWORD_FILE=/run/secrets/db-password
-#     expose:
-#       - 5432
-#     healthcheck:
-#       test: [ "CMD", "pg_isready" ]
-#       interval: 10s
-#       timeout: 5s
-#       retries: 5
-# volumes:
-#   db-data:
-# secrets:
-#   db-password:
-#     file: db/password.txt
-
