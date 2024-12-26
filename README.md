@@ -1,10 +1,8 @@
 # AIRPORT API 
-***
 
 API service for airport management written on DRF
 
 ## Features
-***
 - JWT authenticated
 - Admin panel `/admin/`
 - Documentation is located at `/api/doc/swagger/`
@@ -17,8 +15,7 @@ API service for airport management written on DRF
 - Populating a database with one command
 - Custom permissions for users
 
-## How to run the project:
-***
+## How to run the project
 
 1. Clone the repository: 
 ```
@@ -68,8 +65,7 @@ DATA_CITIES_LITE_PATH=<Path to csv file with list of cities (top 200 cities)>
 DATA_CITIES_PATH=<Path to csv file with list of cities>
 ```
 
-## RUN with docker:
-***
+## RUN with docker
 Docker should be installed
 1. Pull the image: 
 ```
@@ -81,7 +77,6 @@ docker run
 ```
 
 ## Getting access
-***
 - create user via `api/user/register/`
 - get access via `api/user/token/`
 
