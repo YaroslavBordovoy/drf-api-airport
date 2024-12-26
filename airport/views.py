@@ -59,10 +59,8 @@ class FlightViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         self.queryset = Flight.objects.select_related(
-            "route",
             "route__source",
             "route__destination",
-            "airplane",
             "airplane__airplane_type"
         ).prefetch_related("crew")
 
@@ -168,7 +166,6 @@ class AirplaneTypeViewSet(viewsets.ModelViewSet):
 
 class TicketViewSet(viewsets.ModelViewSet):
     queryset = Ticket.objects.select_related(
-        "flight",
         "order__user",
         "flight__route",
         "flight__airplane",
