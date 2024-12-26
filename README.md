@@ -80,16 +80,5 @@ docker run
 - create user via `api/user/register/`
 - get access via `api/user/token/`
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+## Database schema
+![img.png](db_schema.png)
