@@ -1,8 +1,9 @@
 import csv
 import math
+import os
 
 
-FILE_PATH = "airport/services/data/data_cities_lite.csv"
+DATA_CITIES_PATH = os.environ.get("DATA_CITIES_PATH")
 
 city_cache = {}
 
@@ -11,7 +12,10 @@ def get_coord(city: str) -> dict:
     if city in city_cache:
         return city_cache.get(city)
 
-    with open(FILE_PATH, "r", encoding="utf-8") as file:
+    if not DATA_CITIES_PATH:
+        raise FileNotFoundError("The required file was not found.")
+
+    with open(DATA_CITIES_PATH, "r", encoding="utf-8") as file:
         reader = csv.DictReader(file)
 
         for row in reader:

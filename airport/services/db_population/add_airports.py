@@ -1,16 +1,20 @@
 import csv
+import os
 import random
 
 from airport.models import Airport
 
 
-FILE_PATH = "airport/services/data/data_cities_lite.csv"
+DATA_CITIES_LITE_PATH = os.environ.get("DATA_CITIES_LITE_PATH")
 
 
 def get_cities(user_input: int) -> list[str]:
     cities = []
 
-    with open(FILE_PATH, "r", encoding="utf-8") as file:
+    if not DATA_CITIES_LITE_PATH:
+        raise FileNotFoundError("The required file was not found.")
+
+    with open(DATA_CITIES_LITE_PATH, "r", encoding="utf-8") as file:
         reader = csv.DictReader(file)
 
         for row in reader:
