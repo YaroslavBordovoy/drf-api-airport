@@ -19,7 +19,7 @@ class FlightSerializer(serializers.ModelSerializer):
         )
 
     def validate(self, attrs):
-        crew_data = attrs.pop("crew", None)
+        crew_data = attrs.pop("crew", None)  # noqa
         flight = Flight(**attrs)
 
         try:
