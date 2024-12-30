@@ -23,6 +23,7 @@ from airport.models import (
     Ticket,
     Order,
 )
+from airport.pagination import StandardResultsSetPagination
 from airport.permissions import IsAdminOrIfAuthenticatedReadOnly
 from airport.schema_params import (
     FLIGHT_LIST_PARAMETERS,
@@ -53,9 +54,10 @@ from airport.serializers import (
 
 
 class FlightViewSet(viewsets.ModelViewSet):
-    permission_classes = (IsAdminOrIfAuthenticatedReadOnly,)
+    # permission_classes = (IsAdminOrIfAuthenticatedReadOnly,)
     filter_backends = (filters.DjangoFilterBackend,)
     filterset_class = FlightFilter
+    pagination_class = StandardResultsSetPagination
 
     def get_queryset(self):
         self.queryset = Flight.objects.select_related(
@@ -93,9 +95,10 @@ class FlightViewSet(viewsets.ModelViewSet):
 class CrewViewSet(viewsets.ModelViewSet):
     queryset = Crew.objects.all()
     serializer_class = CrewSerializer
-    permission_classes = (IsAdminOrIfAuthenticatedReadOnly,)
+    # permission_classes = (IsAdminOrIfAuthenticatedReadOnly,)
     filter_backends = (filters.DjangoFilterBackend,)
     filterset_class = CrewFilter
+    pagination_class = StandardResultsSetPagination
 
     @extend_schema(
         parameters=CREW_LIST_PARAMETERS
@@ -110,6 +113,7 @@ class RouteViewSet(viewsets.ModelViewSet):
     permission_classes = (IsAdminOrIfAuthenticatedReadOnly,)
     filter_backends = (filters.DjangoFilterBackend,)
     filterset_class = RouteFilter
+    pagination_class = StandardResultsSetPagination
 
     def get_serializer_class(self):
         if self.action == "list":
@@ -131,9 +135,10 @@ class RouteViewSet(viewsets.ModelViewSet):
 class AirportViewSet(viewsets.ModelViewSet):
     queryset = Airport.objects.all()
     serializer_class = AirportSerializer
-    permission_classes = (IsAdminOrIfAuthenticatedReadOnly,)
+    # permission_classes = (IsAdminOrIfAuthenticatedReadOnly,)
     filter_backends = (filters.DjangoFilterBackend,)
     filterset_class = AirportFilter
+    pagination_class = StandardResultsSetPagination
 
     @extend_schema(
         parameters=AIRPORT_LIST_PARAMETERS
@@ -146,9 +151,10 @@ class AirportViewSet(viewsets.ModelViewSet):
 class AirplaneViewSet(viewsets.ModelViewSet):
     queryset = Airplane.objects.select_related("airplane_type")
     serializer_class = AirplaneSerializer
-    permission_classes = (IsAdminOrIfAuthenticatedReadOnly,)
+    # permission_classes = (IsAdminOrIfAuthenticatedReadOnly,)
     filter_backends = (filters.DjangoFilterBackend,)
     filterset_class = AirplaneFilter
+    pagination_class = StandardResultsSetPagination
 
     @extend_schema(
         parameters=AIRPLANE_LIST_PARAMETERS
@@ -177,6 +183,7 @@ class TicketViewSet(viewsets.ModelViewSet):
     permission_classes = (IsAdminOrIfAuthenticatedReadOnly,)
     filter_backends = (filters.DjangoFilterBackend,)
     filterset_class = TicketFilter
+    pagination_class = StandardResultsSetPagination
 
     def get_serializer_class(self):
         if self.action == "list":
@@ -204,6 +211,7 @@ class OrderViewSet(viewsets.ModelViewSet):
     permission_classes = (IsAuthenticated,)
     filter_backends = (filters.DjangoFilterBackend,)
     filterset_class = OrderFilter
+    pagination_class = StandardResultsSetPagination
 
     def get_queryset(self):
         return self.queryset.filter(user=self.request.user)

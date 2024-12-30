@@ -1,6 +1,7 @@
 import csv
 import os
 
+
 DATA_CITIES_PATH = os.environ.get("DATA_CITIES_PATH")
 
 
