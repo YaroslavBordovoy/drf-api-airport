@@ -12,6 +12,15 @@ from airport.models import (
 )
 
 
+def custom_filter(field_name: str, lookup_expr: str, current_type: str):
+    if current_type == "char":
+        field_type = rest_framework.CharFilter
+    elif current_type == "date":
+        field_type = rest_framework.DateFilter
+
+    return field_type(field_name=field_name, lookup_expr=lookup_expr)
+
+
 class DistanceRangeFilterAdmin(admin.SimpleListFilter):
     title = "Distance Range"
     parameter_name = "distance_range"
@@ -35,25 +44,29 @@ class DistanceRangeFilterAdmin(admin.SimpleListFilter):
 
 
 class FlightFilter(rest_framework.FilterSet):
-    airplane_name = rest_framework.CharFilter(
+    airplane_name = custom_filter(
         field_name="airplane__name",
-        lookup_expr="icontains"
-    )
-    departure_airport = rest_framework.CharFilter(
+        lookup_expr="icontains",
+        current_type="char")
+    departure_airport = custom_filter(
         field_name="route__source__closest_big_city",
-        lookup_expr="icontains"
+        lookup_expr="icontains",
+        current_type="char"
     )
-    arrival_airport = rest_framework.CharFilter(
+    arrival_airport = custom_filter(
         field_name="route__destination__closest_big_city",
-        lookup_expr="icontains"
+        lookup_expr="icontains",
+        current_type="char"
     )
-    departure_time = rest_framework.DateFilter(
+    departure_time = custom_filter(
         field_name="departure_time",
-        lookup_expr="icontains"
+        lookup_expr="icontains",
+        current_type="date"
     )
-    arrival_time = rest_framework.DateFilter(
+    arrival_time = custom_filter(
         field_name="arrival_time",
-        lookup_expr="icontains"
+        lookup_expr="icontains",
+        current_type="date"
     )
 
     class Meta:
@@ -68,9 +81,10 @@ class FlightFilter(rest_framework.FilterSet):
 
 
 class CrewFilter(rest_framework.FilterSet):
-    role = rest_framework.CharFilter(
+    role = custom_filter(
         field_name="role",
-        lookup_expr="icontains"
+        lookup_expr="icontains",
+        current_type="char"
     )
 
     class Meta:
@@ -79,13 +93,15 @@ class CrewFilter(rest_framework.FilterSet):
 
 
 class RouteFilter(rest_framework.FilterSet):
-    source_city = rest_framework.CharFilter(
+    source_city = custom_filter(
         field_name="source__closest_big_city",
-        lookup_expr="icontains"
+        lookup_expr="icontains",
+        current_type="char"
     )
-    destination_city = rest_framework.CharFilter(
+    destination_city = custom_filter(
         field_name="destination__closest_big_city",
-        lookup_expr="icontains"
+        lookup_expr="icontains",
+        current_type="char"
     )
 
     class Meta:
@@ -94,9 +110,10 @@ class RouteFilter(rest_framework.FilterSet):
 
 
 class AirportFilter(rest_framework.FilterSet):
-    name = rest_framework.CharFilter(
+    name = custom_filter(
         field_name="closest_big_city",
-        lookup_expr="icontains"
+        lookup_expr="icontains",
+        current_type="char"
     )
 
     class Meta:
@@ -105,13 +122,15 @@ class AirportFilter(rest_framework.FilterSet):
 
 
 class AirplaneFilter(rest_framework.FilterSet):
-    name = rest_framework.CharFilter(
+    name = custom_filter(
         field_name="name",
-        lookup_expr="icontains"
+        lookup_expr="icontains",
+        current_type="char"
     )
-    airplane_type = rest_framework.CharFilter(
+    airplane_type = custom_filter(
         field_name="airplane_type__name",
-        lookup_expr="icontains"
+        lookup_expr="icontains",
+        current_type="char"
     )
 
     class Meta:
@@ -120,13 +139,15 @@ class AirplaneFilter(rest_framework.FilterSet):
 
 
 class TicketFilter(rest_framework.FilterSet):
-    flight_from = rest_framework.CharFilter(
+    flight_from = custom_filter(
         field_name="flight__route__source__closest_big_city",
-        lookup_expr="icontains"
+        lookup_expr="icontains",
+        current_type="char"
     )
-    flight_to = rest_framework.CharFilter(
+    flight_to = custom_filter(
         field_name="flight__route__destination__closest_big_city",
-        lookup_expr="icontains"
+        lookup_expr="icontains",
+        current_type="char"
     )
 
     class Meta:
@@ -135,9 +156,10 @@ class TicketFilter(rest_framework.FilterSet):
 
 
 class OrderFilter(rest_framework.FilterSet):
-    created_at = rest_framework.DateFilter(
+    created_at = custom_filter(
         field_name="created_at",
-        lookup_expr="icontains"
+        lookup_expr="icontains",
+        current_type="date"
     )
 
     class Meta:
