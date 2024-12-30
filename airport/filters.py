@@ -1,5 +1,5 @@
-from django_filters import rest_framework
 from django.contrib import admin
+from django_filters import rest_framework
 
 from airport.models import (
     Flight,

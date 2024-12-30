@@ -1,5 +1,6 @@
 from django.contrib import admin
 
+from airport.filters import DistanceRangeFilterAdmin
 from airport.models import (
     Flight,
     Crew,
@@ -10,7 +11,6 @@ from airport.models import (
     Ticket,
     Order
 )
-from airport.filters import DistanceRangeFilterAdmin
 
 
 @admin.register(Airplane)
