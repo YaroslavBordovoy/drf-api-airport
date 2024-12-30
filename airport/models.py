@@ -71,8 +71,8 @@ class Crew(models.Model):
     first_name = models.CharField(max_length=63)
     last_name = models.CharField(max_length=63)
     role = models.CharField(
-        max_length=3,
-        choices=CrewRole.choices,
+        max_length=63,
+        choices=CrewRole.choices(),
     )
 
     class Meta:

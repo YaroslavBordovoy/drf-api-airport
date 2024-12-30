@@ -1,3 +1,5 @@
+import enum
+
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
@@ -23,7 +25,18 @@ class AirplaneTypeName(models.TextChoices):
     LARGE = "LR", _("Large plane")
 
 
-class CrewRole(models.TextChoices):
-    PILOT = "P", _("Pilot")
-    CO_PILOT = "CP", _("Co-Pilot")
-    FLIGHT_ATTENDANT = "FA", _("Flight Attendant")
+class CrewRole(str, enum.Enum):
+    PILOT = "PILOT", "Pilot"
+    CO_PILOT = "CO-PILOT", "Co-pilot"
+    FLIGHT_ATTENDANT = "FLIGHT ATTENDANT", "Flight attendant"
+
+    def __new__(cls, value, label):
+        obj = str.__new__(cls, value)
+        obj._value_ = value
+        obj.label = label
+
+        return obj
+
+    @classmethod
+    def choices(cls):
+        return [(choice.value, choice.label) for choice in cls]
