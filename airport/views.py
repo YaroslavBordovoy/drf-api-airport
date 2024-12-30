@@ -2,6 +2,7 @@ from django.db.models import Count, F
 from django_filters import rest_framework as filters
 from drf_spectacular.utils import extend_schema
 from rest_framework import viewsets
+from rest_framework.exceptions import PermissionDenied
 from rest_framework.permissions import IsAuthenticated
 
 from airport.filters import (
@@ -54,7 +55,7 @@ from airport.serializers import (
 
 
 class FlightViewSet(viewsets.ModelViewSet):
-    # permission_classes = (IsAdminOrIfAuthenticatedReadOnly,)
+    permission_classes = (IsAdminOrIfAuthenticatedReadOnly,)
     filter_backends = (filters.DjangoFilterBackend,)
     filterset_class = FlightFilter
     pagination_class = StandardResultsSetPagination
@@ -95,7 +96,7 @@ class FlightViewSet(viewsets.ModelViewSet):
 class CrewViewSet(viewsets.ModelViewSet):
     queryset = Crew.objects.all()
     serializer_class = CrewSerializer
-    # permission_classes = (IsAdminOrIfAuthenticatedReadOnly,)
+    permission_classes = (IsAdminOrIfAuthenticatedReadOnly,)
     filter_backends = (filters.DjangoFilterBackend,)
     filterset_class = CrewFilter
     pagination_class = StandardResultsSetPagination
@@ -135,7 +136,7 @@ class RouteViewSet(viewsets.ModelViewSet):
 class AirportViewSet(viewsets.ModelViewSet):
     queryset = Airport.objects.all()
     serializer_class = AirportSerializer
-    # permission_classes = (IsAdminOrIfAuthenticatedReadOnly,)
+    permission_classes = (IsAdminOrIfAuthenticatedReadOnly,)
     filter_backends = (filters.DjangoFilterBackend,)
     filterset_class = AirportFilter
     pagination_class = StandardResultsSetPagination
@@ -151,7 +152,7 @@ class AirportViewSet(viewsets.ModelViewSet):
 class AirplaneViewSet(viewsets.ModelViewSet):
     queryset = Airplane.objects.select_related("airplane_type")
     serializer_class = AirplaneSerializer
-    # permission_classes = (IsAdminOrIfAuthenticatedReadOnly,)
+    permission_classes = (IsAdminOrIfAuthenticatedReadOnly,)
     filter_backends = (filters.DjangoFilterBackend,)
     filterset_class = AirplaneFilter
     pagination_class = StandardResultsSetPagination

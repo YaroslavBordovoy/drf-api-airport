@@ -30,4 +30,4 @@ router.register(
 router.register("tickets", TicketViewSet, basename="ticket")
 router.register("orders", OrderViewSet, basename="order")
 
-urlpatterns = [path("", include(router.urls))]
+urlpatterns = router.urls
