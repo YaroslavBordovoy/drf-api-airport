@@ -1,18 +1,19 @@
 from django.conf import settings
 from django.core.exceptions import ValidationError
 from django.db import models
+from django.db.models import UniqueConstraint
 
-from airport.services.utils.airplane_image import airplane_image_file_path
 from airport.choices import (
     AirplaneName,
     AirplaneTypeName,
     CrewRole
 )
+from airport.services.utils.airplane_image import airplane_image_file_path
+from airport.services.utils.city_verification import get_city
 from airport.services.utils.distance_calcultion import (
     get_coord,
     calculate_distance
 )
-from airport.services.utils.city_verification import get_city
 
 
 class Flight(models.Model):
@@ -147,7 +148,12 @@ class Airport(models.Model):
 
     class Meta:
         ordering = ("name",)
-        unique_together = ("name", "closest_big_city")
+        constraints = [
+            UniqueConstraint(
+                fields=("name", "closest_big_city"),
+                name="Unique name of the city and airport"
+            )
+        ]
 
     def clean(self):
         is_existing_city = get_city(self.closest_big_city)
