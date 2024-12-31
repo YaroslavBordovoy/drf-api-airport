@@ -88,7 +88,7 @@ class AdminCrewTests(TestCase):
         data = {
             "first_name": "test_name",
             "last_name": "test_last_name",
-            "role": "P"
+            "role": "PILOT"
         }
 
         response = self.client.post(CREW_URL, data)
