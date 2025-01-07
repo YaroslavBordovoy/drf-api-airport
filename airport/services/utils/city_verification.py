@@ -5,7 +5,7 @@ import os
 DATA_CITIES_PATH = os.environ.get("DATA_CITIES_PATH")
 
 
-def get_city(city) -> bool:
+def get_city(city: str) -> bool:
     if not DATA_CITIES_PATH:
         raise FileNotFoundError("The required file was not found.")
 
